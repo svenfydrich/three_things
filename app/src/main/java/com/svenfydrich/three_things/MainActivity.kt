@@ -1,5 +1,6 @@
 package com.svenfydrich.three_things
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -39,6 +40,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @PreviewScreenSizes
 @Composable
 fun Three_thingsApp() {
@@ -61,7 +63,7 @@ fun Three_thingsApp() {
             }
         }
     ) {
-        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+        Scaffold(modifier = Modifier.fillMaxSize()) {
             when (currentDestination) {
                 AppDestinations.Things -> ThingsScreen()
                 AppDestinations.History -> HistoryScreen()
